@@ -1,0 +1,23 @@
+{
+ "display": ":0",
+ "switch_threshold": 1.05,
+ "fiat": "EUR",
+ "pwr_cost": 0.17,
+ "min_profit": 0.00020,
+ "pmnt_addr": "3EMyEJgJNGTZoww8MCZK5wPGCGTjJFvV4w",
+ "miner_name": "Rigby",
+ "locations": ["eu","usa"],
+ "mintime": 300,
+ "algorithms": 
+ {
+  "skunk": {"ghs": 0.046, "kwh": 0.430, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, 
+   "miner": { "name": "ccminer", "args": {"algo": "skunk", "url": "stratum+tcp://{algo}.{loc}.nicehash.com:{port}", "port": 3362 }
+   }
+ },
+  "nist5": { "ghs": 0.065, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, 
+    "miner": { "cmd": "/opt/ccminer/ccminer", "args": "-a nist5 -o stratum+tcp://nist5.eu.nicehash.com:3340 -u {ADDR}.{MINER} -p x --api-remote" }}
+ },
+ "miners": {
+  "ccminer": "/opt/ccminer/ccminer -a {algo} -o {url} -u {User}.{Miner} -p x --api-remote"
+ }
+}
