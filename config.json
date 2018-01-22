@@ -8,14 +8,13 @@
  "miner_name": "Rigby",
  "locations": ["eu","usa"],
  "mintime": 300,
- "algorithms": 
- {
-  "skunk": {"ghs": 0.046, "kwh": 0.430, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, 
-   "miner": { "name": "ccminer", "args": {"algo": "skunk", "url": "stratum+tcp://{algo}.{loc}.nicehash.com:{port}", "port": 3362 }
-   }
- },
-  "nist5": { "ghs": 0.065, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, 
-    "miner": { "cmd": "/opt/ccminer/ccminer", "args": "-a nist5 -o stratum+tcp://nist5.eu.nicehash.com:3340 -u {ADDR}.{MINER} -p x --api-remote" }}
+ "smaurl": "https://api.nicehash.com/api?method=simplemultialgo.info",
+ "exrateurl": "https://api.coinbase.com/v2/exchange-rates?currency=BTC",
+ "loglevel": "debug",
+ "logfile": "./switcher.log",
+ "algorithms":  {
+  "skunk": {"ghs": 0.046, "kwh": 0.430, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30,"miner": {"name": "ccminer", "args": {"algo": "skunk", "url": "stratum+tcp://{algo}.{loc}.nicehash.com:{port}", "port": 3362 }}},
+  "nist5": {"ghs": 0.065, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30,"miner": {"name": "ccminer", "args": {"algo": "nist5", "url": "stratum+tcp://{algo}.{loc}.nicehash.com:{port}", "port": 3340 }}}
  },
  "miners": {
   "ccminer": "/opt/ccminer/ccminer -a {algo} -o {url} -u {User}.{Miner} -p x --api-remote"
