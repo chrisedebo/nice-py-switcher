@@ -13,10 +13,33 @@
  "loglevel": "debug",
  "logfile": "./switcher.log",
  "algorithms":  {
-  "skunk": {"ghs": 0.046, "kwh": 0.430, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30,"miner": {"name": "ccminer", "args": {"algo": "skunk", "url": "stratum+tcp://{algo}.{loc}.nicehash.com:{port}", "port": 3362 }}},
-  "nist5": {"ghs": 0.065, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30,"miner": {"name": "ccminer", "args": {"algo": "nist5", "url": "stratum+tcp://{algo}.{loc}.nicehash.com:{port}", "port": 3340 }}}
+  "nist5": {"ghs": 0.065, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30,"miner": {"name": "ccminer", "args": {"algo": "nist5", "url": "stratum+tcp://{algo}.{loc}.nicehash.com:{port}", "port": 3340 }}},
+  "blake256r8": { "ghs": 4.0476183, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "blake", "url": "stratum+tcp://blake256r8.{loc}.nicehash.com:{port}", "port": 3349 }}},
+  "blake2s": { "ghs": 6.3023263, "kwh": 0.425, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "blake2s", "url": "stratum+tcp://blake2s.{loc}.nicehash.com:{port}", "port": 3361 }}},
+  "decred": { "ghs": 4.4034503, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer-tpruvot", "args": {"algo": "decred", "url": "stratum+tcp://decred.{loc}.nicehash.com:{port}", "port": 3354 }}},
+  "equihash": { "ghs": 0.00000067, "kwh": 0.410, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ewbf", "args": {"algo": "equihash", "url": "equihash.{loc}.nicehash.com", "port": 3357 }}},
+  "keccak": { "ghs": 0.8027754, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "keccak", "url": "stratum+tcp://keccak.{loc}.nicehash.com:{port}", "port": 3338 }}},
+  "lbry": { "ghs": 0.343769, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "lbry", "url": "stratum+tcp://lbry.{loc}.nicehash.com:{port}", "port": 3356 }}},
+  "lyra2re": { "ghs": 0.0089845, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "lyra2", "url": "stratum+tcp://lyra2re.{loc}.nicehash.com:{port}", "port": 3342 }}},
+  "lyra2rev2": { "ghs": 0.0511684, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "lyra2v2", "url": "stratum+tcp://lyra2rev2.{loc}.nicehash.com:{port}", "port": 3347 }}},
+  "neoscrypt": { "ghs": 0.0012286, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "neoscrypt", "url": "stratum+tcp://neoscrypt.{loc}.nicehash.com:{port}", "port": 3341 }}},
+  "qubit": { "ghs": 0.0311314, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "qubit", "url": "stratum+tcp://qubit.{loc}.nicehash.com:{port}", "port": 3344 }}},
+  "quark": { "ghs": 0, "kwh": 0, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "quark", "url": "stratum+tcp://quark.{loc}.nicehash.com:{port}", "port": 3345 }}},
+  "sia": { "ghs": 1.5585852, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "sia", "url": "stratum+tcp://sia.{loc}.nicehash.com:{port}", "port": 3360 }}},
+  "x11gost": { "ghs": 0.0133858, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "sib", "url": "stratum+tcp://x11gost.{loc}.nicehash.com:{port}", "port": 3359 }}},
+  "skunk": { "ghs": 0.046621, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "skunk", "url": "stratum+tcp://skunk.{loc}.nicehash.com:{port}", "port": 3362 }}},
+  "x11": { "ghs": 0.0187954, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "x11", "url": "stratum+tcp://x11.{loc}.nicehash.com:{port}", "port": 3336 }}},
+  "x13": { "ghs": 0.0154465, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "x13", "url": "stratum+tcp://x13.{loc}.nicehash.com:{port}", "port": 3337 }}},
+  "x15": { "ghs": 0.0141323, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "x15", "url": "stratum+tcp://x15.{loc}.nicehash.com:{port}", "port": 3339 }}},
+  "whirlpoolx": { "ghs": 0.0686766, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "whirlpool", "url": "stratum+tcp://whirlpoolx.{loc}.nicehash.com:{port}", "port": 3343 }}},
+  "cryptonight": { "ghs": 0.0000007, "kwh": 0.450, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "ccminer", "args": {"algo": "cryptonight", "url": "stratum+tcp://cryptonight.{loc}.nicehash.com:{port}", "port": 3355 }}},
+  "daggerhashimoto": { "ghs": 0, "kwh": 0, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "xminer", "args": {"algo": "daggerhashimoto", "url": "stratum+tcp://daggerhashimoto.{loc}.nicehash.com:{port}", "port": 3353 }}},
+  "hodl": { "ghs": 0, "kwh": 0, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "xminer", "args": {"algo": "hodl","url": "stratum+tcp://hodl.{loc}.nicehash.com:{port}", "port": 3352 }}},
+  "scrypt": { "ghs": 0, "kwh": 0, "plimit": 200, "gpu_oc": 0, "mem_oc": 0, "fan": 30, "miner": { "name": "xminer", "args": {"algo": "hodl","url": "stratum+tcp://hodl.{loc}.nicehash.com:{port}", "port": 3352 }}}
  },
  "miners": {
-  "ccminer": "/opt/ccminer/ccminer -a {algo} -o {url} -u {User}.{Miner} -p x --api-remote"
+  "ccminer": "/opt/ccminer/ccminer -a {algo} -o {url} -u {User}.{Miner} -p x --api-remote",
+  "ccminer-tpruvot": "/home/digger/ccminer-tpruvot/ccminer -a {algo} -o {url} -u {User}.{Miner} -p x --api-remote",
+  "ewbf": "/home/digger/ewbf-miner/miner --server {url} --user {User}.{Miner} --pass x --port {port} --intensity 64"
  }
 }
