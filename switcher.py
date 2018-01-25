@@ -25,7 +25,7 @@ def getexrate(exrateurl,fiat):
     #Get coinbase exchangerate
     exrates=json.loads(getjson(exrateurl))
     exrate=float(exrates["data"]["rates"][fiat])
-    if logenum >= 5:
+    if loglevel >= 5:
         print(("exchange rate:{}").format(exrate))
 
     return exrate
@@ -55,9 +55,14 @@ def getprofits(sma,exrate,algos):
             name=algo["name"]
             algoprofit[name]=profit
             
-            if logenum >= 5:
-                rateformat="algo: {}, paying: {} BTC/GH/Day, in:€{}, out:€{}, net:€{}"
-                print(rateformat.format(name,paying,incoming,outgoing,round(profit,2)))
+            if loglevel >= 5:
+                rateformat="algo: {}  paying: {}  BTC/GH/Day  in: €{}  out: €{}  net:€{}"
+                print(rateformat.format('{:10}'.format(name), \
+                                        '{:.5f}'.format(round(paying,5)), 
+                                        '{:.5f}'.format(round(incoming,5)), \
+                                        '{:.5f}'.format(round(outgoing,5)), \
+                                        round(profit,5)) \
+                                        )
             
             
         except:
@@ -67,8 +72,6 @@ def getprofits(sma,exrate,algos):
         
     return algoprofit
 
-#Set up logging
-loglevels={"debug":5,"info":4,"warn":3,"error":2,"fatal":1,"off":0}
 
 
 #Get nicehash simple multi algorigthm data
@@ -112,6 +115,7 @@ loglevels={"debug":5,"info":4,"warn":3,"error":2,"fatal":1,"off":0}
 # Try to acheive best performance per watt.
 #
 
+
 #Load Config
 cfgfile=sys.argv[1]
 config=json.loads(open(cfgfile).read())
@@ -126,9 +130,12 @@ switch_threshold=config["switch_threshold"]
 algos=config["algorithms"]
 exrateurl=config["exrateurl"]
 smaurl=config["smaurl"]
-loglevel=config["loglevel"]
+
+#Set up logging
+loglevels={"debug":5,"info":4,"warn":3,"error":2,"fatal":1,"off":0}
+loglevel=loglevels[config["loglevel"]]
 logfile=config["logfile"]
-logenum=loglevels[loglevel]
+
 
 sma=getsmaratios(smaurl)
 exrate=getexrate(exrateurl,fiat)
@@ -137,7 +144,6 @@ algoprofit=getprofits(sma,exrate,algos)
 max_profit=0.0
 max_profit_algo=""
 for algo in algoprofit:
-  print(algo)
   profit=(algoprofit[algo])
   if profit > max_profit:
     max_profit=profit

@@ -10,6 +10,10 @@
  "mintime": 300,
  "smaurl": "https://api.nicehash.com/api?method=simplemultialgo.info",
  "exrateurl": "https://api.coinbase.com/v2/exchange-rates?currency=BTC",
+ "earningurl": "https://api.nicehash.com/api?method=stats.provider&addr={ADDR} ",
+ "balanceurl": "https://api.nicehash.com/api?method=balance&id={APPID}&key={APIKEY}",
+ "roapikey": "",
+ "appid": "",
  "loglevel": "debug",
  "logfile": "./switcher.log",
  "algorithms":  {
