@@ -66,7 +66,7 @@ def printprofits(sma,exrate,algos):
     
             name=algo["name"]
             
-            influxline="profit_stats,miner={},currency={},algo={} in={},out={},profit={}"
+            influxline="profit_stats,pool=nicehash,miner={},currency={},algo={} in={},out={},profit={}"
             #Profits in Fiat
             print(influxline.format(miner_name,fiat,name, \
                                         round(incoming,5), \
