@@ -1,4 +1,3 @@
-from abc import ABC, abstractmethod
 
 class AlgoBenchmark:
     def __init__(self,AlgoName,MinerName,GHS,KW,GpuClock,MemClock,PowerLimit):

@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class AlgoBenchmark:
     #AlgoName
     #MinerName
@@ -38,3 +39,27 @@ class PoolBase(ABC):
     def __init__(self, value):
         self.value = value
         super().__init__()
+
+    @abc.abstractmethod
+    def getAlgos(self):
+        pass
+    
+    @property
+    def URL(self):
+        return self.url
+
+    @property
+    def Username(self):
+        return self.Username
+
+    @property
+    def Password(self):
+        return self.Password
+
+    @property
+    
+
+class Bird(abc.ABC):
+    @abc.abstractmethod
+    def fly(self):
+        pass
