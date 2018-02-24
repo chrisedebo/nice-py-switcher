@@ -1,65 +1,39 @@
 from abc import ABC, abstractmethod
 
-
-class AlgoBenchmark:
-    #AlgoName
-    #MinerName
-    #GHS
-    #KW
-    #GpuClock
-    #MemClock
-    #PowerLimit
-
+#Algorithm base type
 class Algo:
-    #AlgoName
-    #AlgoBenchmark
-    #AlgoProfitGHSDay
-   
-class AlgorithmMap:
-    #AlgoName
-    #AltAlgoName
 
-class AlgoProfitGHSDay:
-    #AlgoName
-    #ProfitRatio
-    #CryptoCurreny
-    #URL
-    #Username
-    #Password
+    def __init__(self,  publicName, currency, profitRatio):
+        self.currency = currency
+        self.publicName =  publicName
+        self.profitRatio = profitRatio
+  
 
-class ExchangeRate:
-    #BTC
-    #CryptoCurrency
+#Deets to connect
+class AlgoConnection:
+    
+    def __init__(self, url, username, password):
+        self.url = url
+        self.username = username
+        self.password = password
 
 
 
-
+#Pool plugins must implement these things.
 class PoolBase(ABC):
 
-    def __init__(self, value):
-        self.value = value
+    def __init__(self):        
+        #self.poolName = poolname
         super().__init__()
 
-    @abc.abstractmethod
-    def getAlgos(self):
+    #"""Return a list of Algo information"""
+    @abstractmethod
+    def getAlgos(self):       
         pass
-    
-    @property
-    def URL(self):
-        return self.url
 
-    @property
-    def Username(self):
-        return self.Username
-
-    @property
-    def Password(self):
-        return self.Password
-
-    @property
-    
-
-class Bird(abc.ABC):
-    @abc.abstractmethod
-    def fly(self):
+    #"""Return the AlgoConnection for a given algorhyththsms"""
+    @abstractmethod
+    def getAlgoConnection(algo):
         pass
+
+
