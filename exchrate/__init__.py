@@ -26,14 +26,7 @@ class PoolBase(ABC):
         #self.poolName = poolname
         super().__init__()
 
-    #"""Return a list of Algo information"""
+    #"""Return a list of Exchange Rate information"""
     @abstractmethod
-    def getAlgos(self):       
+    def getExrates(self)       
         pass
-
-    #"""Return the AlgoConnection for a given algorhyththsms"""
-    @abstractmethod
-    def getAlgoConnection(algo):
-        pass
-
-
