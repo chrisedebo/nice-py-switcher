@@ -5,8 +5,6 @@ from abc import ABC, abstractmethod
 class MeterBase(ABC):
 
     def __init__(self):
-        self.reading = reading
-        self.unit = unit
         super().__init__()
 
     @abstractmethod
