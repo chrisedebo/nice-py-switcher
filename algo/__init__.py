@@ -70,7 +70,12 @@ class AlgorithmMap:
     #Common Algorithm Name, internal. Must be the same in all modules
     def AlgoName(self):
         return self.AlgoName
-    #AltAlgoName
+    #Pool/Miner specific algorithm name.
+    def AltAlgoName(aelf):
+        return self.AltAlgoName:
+    #Pool Stats/Miner Difficulty adjustment factor
+    def AdjustFactor(self):
+        return self.AdjustFactor:
 
 class AlgoProfitGHSDay:
     @property

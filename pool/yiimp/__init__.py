@@ -2,7 +2,7 @@ import json
 import urllib.request
 from pool import PoolBase, Algo
 
-class Zpool(PoolBase):
+class Yiimp(PoolBase):
     def __init__(self):
         self.apiUrl = "https://zpool.ca/api/status"
         self.poolUrl = "{ALGO}.mine.zpool.ca:{PORT}"
@@ -75,6 +75,9 @@ def downloadString(url):
 
 #Adjust estimates so they are all in mBTC/GHs/Day
 def adjustEstimate(algoname,estimate):
+    # if we find an algo adjustment in config
+    # apply that factor if not then retunr the current value no adjustment.
+    # logging. 
     if algoname == "sha256":
         newestimate=float(estimate)/1000000000
 

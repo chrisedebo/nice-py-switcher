@@ -1,4 +1,4 @@
 #!/usr/bin/env python3
-from pool import zpool
-z=zpool.Zpool()
+from pool import yiimp
+z=yiimp.Yiimp()
 print(z.getAlgos())

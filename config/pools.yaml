@@ -1,0 +1,122 @@
+pools:
+    version: 1
+    
+    poolDefs:
+        name: 'zpool'
+        class: 'pools.yiimp'
+        apiUrl: 'https://zpool.ca/api/status'
+        stratumUrl: '{ALGO}.mine.zpool.ca:{PORT}'
+        statsData: 'estimate_last24hr'
+        cryptoPaid: 'BTC'
+        algoMap: 
+        - algoName: 'Bitcore' 
+          apiName:  'bitcore' 
+          adjFactor: 0
+          
+        - algoName: 'Blake2S'
+          apiName:  'blake2s'
+          adjFactor: 0
+
+        - algoName: 'Blakecoin'
+          apiName:  'blakecoin'
+          adjFactor: 0
+
+        - algoName: 'C11'
+          apiName:  'c11'
+          adjFactor: 0
+
+        - algoName: 'Equihash'
+          apiName: 'equihash'
+          adjFactor: 0
+
+        - algoName: 'Groestl'
+          apiName: 'groestl'
+          adjFactor: 0
+
+        - algoName: 'HSR'
+          apiName: 'hsr'
+          adjFactor: 0
+
+        - algoName: 'Keccak'
+          apiName: 'keccak'
+          adjFactor: 0
+
+        - algoName: 'LBRY'
+          apiName: 'lbry'
+          adjFactor: 0
+
+        - algoName: 'Lyra2RE2'
+          apiName: 'lyra2v2'
+          adjFactor: 0
+
+        - algoName: 'Myriad-Groestl'
+          apiName: 'myr-gr'
+          adjFactor: 0
+
+        - algoName: 'NeoScrypt'
+          apiName: 'neoscrypt'
+          adjFactor: 0
+
+        - algoName: 'NIST5'
+          apiName: 'nist5'
+          adjFactor: 0
+
+        - algoName: 'Phi'
+          apiName: 'phi'
+          adjFactor: 0
+
+        - algoName: 'Polytimos'
+          apiName: 'polytimos'
+          adjFactor: 0
+
+        - algoName: 'Quark'
+          apiName: 'quark'
+          adjFactor: 0
+
+        - algoName: 'Qubit'
+          apiName: 'qubit'
+          adjFactor: 0
+
+        - algoName: 'Sib'
+          apiName: 'sib'
+          adjFactor: 0
+
+        - algoName: 'Skein'
+          apiName: 'skein'
+          adjFactor: 0
+
+        - algoName: 'Skunk'
+          apiName: 'skunk'
+          adjFactor: 0
+
+        - algoName: 'Timetravel'
+          apiName: 'timetravel'
+          adjFactor: 0
+
+        - algoName: 'Tribus'
+          apiName: 'tribus'
+          adjFactor: 0
+
+        - algoName: 'X11'
+          apiName: 'x11'
+          adjFactor: 0
+
+        - algoName: 'X11evo'
+          apiName: 'x11evo'
+          adjFactor: 0
+
+        - algoName: 'X13'
+          apiName: 'x13'
+          adjFactor: 0
+
+        - algoName: 'X14'
+          apiName: 'x14'
+          adjFactor: 0
+
+        - algoName: 'X17'
+          apiName: 'x17'
+          adjFactor: 0
+
+        - algoName: 'XEvan'
+          apiName: 'xevan' 
+          adjFactor: 0

@@ -1,6 +1,6 @@
 from meter import MeterBase
     
-from meter import smartplug
+from . import smartplug
 
 class Ediplug(MeterBase):
     def __init__(self):

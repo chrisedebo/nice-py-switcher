@@ -1,0 +1,64 @@
+logging:
+    version: 1
+
+    formatters:
+      brief:
+        format: '%(message)s'
+      default:
+        format: '%(asctime)s %(levelname)-8s %(name)-15s %(message)s'
+        datefmt: '%Y-%m-%d %H:%M:%S'
+      fluent_fmt:
+        '()': fluent.handler.FluentRecordFormatter
+        format:
+          level: '%(levelname)s'
+          hostname: '%(hostname)s'
+          where: '%(module)s.%(funcName)s'
+
+    handlers:
+        console:
+            class : logging.StreamHandler
+            level: DEBUG
+            formatter: default
+            stream: ext://sys.stdout
+
+        info_file_handler:
+            class: logging.handlers.RotatingFileHandler
+            level: INFO
+            formatter: simple
+            filename: info.log
+            maxBytes: 10485760 # 10MB
+            backupCount: 20
+            encoding: utf8
+
+        error_file_handler:
+            class: logging.handlers.RotatingFileHandler
+            level: ERROR
+            formatter: simple
+            filename: errors.log
+            maxBytes: 10485760 # 10MB
+            backupCount: 20
+            encoding: utf8
+
+#fluent:
+        #    class: fluent.handler.FluentHandler
+        #    host: localhost
+        #    port: 24224
+        #    tag: test.logging
+        #    # buffer_overflow_handler: overflow_handler
+        #    formatter: fluent_fmt
+        #    level: DEBUG
+        none:
+            class: logging.NullHandler
+
+    loggers:
+        #amqp:
+        #    handlers: [none]
+        #    propagate: False
+        conf:
+            handlers: [none]
+            propagate: False
+        '': # root logger
+            #handlers: [console, fluent]
+            handlers: [console]
+            level: DEBUG
+            propagate: False
