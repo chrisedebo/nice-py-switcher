@@ -2,7 +2,7 @@ pools:
     version: 1
     
     poolDefs:
-        name: 'zpool'
+      - name: 'zpool'
         class: 'pools.yiimp'
         apiUrl: 'https://zpool.ca/api/status'
         stratumUrl: '{ALGO}.mine.zpool.ca:{PORT}'

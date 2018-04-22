@@ -68,7 +68,7 @@ class Yiimp(PoolBase):
 
 #Get JSON from URL
 def downloadString(url):
-    req=urllib.request.Request(url, None, {"User-Agent": "Lynx/2.8.8dev.3 libwww-FM/2.14 SSL-MM/1.4.1", \
+    req=urllib.request.Request(url, None, {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36", \
                                             "Pragma": "no-cache"})
     with urllib.request.urlopen(req) as response:
         return response.read().decode('utf-8')
