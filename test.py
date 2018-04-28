@@ -1,13 +1,53 @@
 #!/usr/bin/env python3
-from pool.yiimp import Yiimp
+from pool.loader import poolFactory
+
 import logger
 import logging
+import time
+from time import sleep
 
-print dir(logger)
-logging.config = logger.logging
-log.info("Testing Yiimp Pool")
+class test:
+    def run(self):
+        log = logging.getLogger("test-runner")
+        log.warn("==================================================")
+        sleep(0.001)
+        log.warn("||    ___           _        ______        __   ||")
+        sleep(0.001)
+        log.warn("||   / _ )___ ___ _(_)__    /_  __/__ ___ / /_  ||")
+        sleep(0.001)
+        log.warn("||  / _  / -_) _ `/ / _ \    / / / -_|_-</ __/  ||")
+        sleep(0.001)
+        log.warn("|| /____/\__/\_, /_/_//_/   /_/  \__/___/\__/   ||")
+        sleep(0.001)
+        log.warn("||          /___/                               ||")
+        sleep(0.001)
+        log.warn("==================================================")
+        sleep(0.001)
 
-z=Yiimp()
-print(z.getAlgos())
+        log.info("Loading Pools config")
+        try:
+            fac = poolFactory("./config/pools.yaml")
+        except:
+            log.error("Error loading pool config")
+        
+        pools = fac.getPools()
+        for pool in pools:
+            poolAlgos = pool.getAlgos()
+            log.info("Pool '%s' containing %s available algo(s)", pool.PoolName(), len(poolAlgos))
 
+        log.warn("=================================================")
+        sleep(0.001)
+        log.warn("||        ____        __  ______        __     ||")
+        sleep(0.001)
+        log.warn("||       / __/__  ___/ / /_  __/__ ___ / /_    ||")
+        sleep(0.001)
+        log.warn("||      / _// _ \/ _  /   / / / -_|_-</ __/    ||")
+        sleep(0.001)
+        log.warn("||     /___/_//_/\_,_/   /_/  \__/___/\__/     ||")
+        sleep(0.001)
+        log.warn("||                                             ||")
+        sleep(0.001)
+        log.warn("=================================================")
 
+t = test()
+t.run()

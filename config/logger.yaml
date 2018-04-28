@@ -9,10 +9,18 @@ logging:
         datefmt: '%Y-%m-%d %H:%M:%S'
       fluent_fmt:
         '()': fluent.handler.FluentRecordFormatter
+        datefmt: '%Y-%m-%d %H:%M:%S'
         format:
           level: '%(levelname)s'
           hostname: '%(hostname)s'
-          where: '%(module)s.%(funcName)s'
+          function: '%(funcName)s'
+          service: '%(name)s'
+          scriptpath: '%(pathname)s'
+          threadnumber: '%(thread)d'
+          threadname: '%(threadName)s'
+          linenumber: '%(lineno)s'
+          processid: '%(process)d'
+          processname: '%(processName)s'
 
     handlers:
         console:
@@ -24,8 +32,9 @@ logging:
             class: fluent.handler.FluentHandler
             host: hungry
             port: 24224
-            tag: test.logging
+            tag: mining.logging
             # buffer_overflow_handler: overflow_handler
+            nanosecond_precision: true
             formatter: fluent_fmt
             level: DEBUG
         none:
