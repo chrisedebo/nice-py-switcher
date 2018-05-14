@@ -21,6 +21,7 @@ logging:
           linenumber: '%(lineno)s'
           processid: '%(process)d'
           processname: '%(processName)s'
+          stacktrace: '%(exc_text)s'
 
     handlers:
         console:
@@ -36,7 +37,7 @@ logging:
             # buffer_overflow_handler: overflow_handler
             nanosecond_precision: true
             formatter: fluent_fmt
-            level: DEBUG
+            level: INFO
         none:
             class: logging.NullHandler
 

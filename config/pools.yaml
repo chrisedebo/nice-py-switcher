@@ -1,70 +1,74 @@
 pools:
     version: 1
-    
+    configRefresh: 300 
     poolDefs:
       - name: 'zpool'
         class: 'pool.yiimp'
         apiUrl: 'https://zpool.ca/api/status'
         stratumUrl: '{ALGO}.mine.zpool.ca:{PORT}'
+        refreshInterval: 60
         statsData: 'estimate_last24h'
         cryptoPaid: 'BTC'
+        paymentAddr: '15V1N99VTBEN3u5eb3YDeBhyqxjNkpKFAU'
         algoMap:
-        - ['Buttcore','bitcore']
-        - ['Blake2S','blake2s',-3]
-        - ['Blakecoin', 'blakecoin',-3]
-        - ['C11', 'c11']
-        - ['Equihash','equihash',3]
-        - ['Groestl','groestl']
-        - ['HSR','hsr']
-        - ['Keccak','keccak',-3]
-        - ['LBRY','lbry']
-        - ['Lyra2RE2','lyra2v2']
-        - ['Myriad-Groestl','myr-gr']
-        - ['NeoScrypt','neoscrypt']
-        - ['NIST5','nist5']
-        - ['Phi','phi']
-        - ['Polytimos','polytimos']
-        - ['Quark','quark',-3]
-        - ['Qubit','qubit',-3]
-        - ['Sib','sib']
-        - ['Skein','skein']
-        - ['Skunk','skunk']
-        - ['Timetravel','timetravel']
-        - ['Tribus','tribus']
-        - ['X11','x11',-3]
-        - ['X11evo','x11evo']
-        - ['X13','x13']
-        - ['X14','x14']
-        - ['X17','x17']
-        - ['XEvan','xevan']
+        - { 'name':'Bitcore', 'apiName':'bitcore', 'cryptoPaid':'BUTT', 'adjFactor':0 }
+        - { 'name':'Blake2S', 'apiName':'blake2s', 'adjFactor':-3}
+        - { 'name':'Blakecoin', 'apiName':'blakecoin', 'adjFactor':-3}
+        - { 'name':'C11', 'apiName':'c11'}
+        - { 'name':'Equihash', 'apiName':'equihash',3}
+        - { 'name':'Groestl', 'apiName':'groestl'}
+        - { 'name':'HSR', 'apiName':'hsr'}
+        - { 'name':'Keccak', 'apiName':'keccak', 'adjFactor':-3}
+        - { 'name':'LBRY', 'apiName':'lbry'}
+        - { 'name':'Lyra2RE2', 'apiName':'lyra2v2'}
+        - { 'name':'Myriad-Groestl', 'apiName':'myr-gr'}
+        - { 'name':'NeoScrypt', 'apiName':'neoscrypt'}
+        - { 'name':'NIST5', 'apiName':'nist5'}
+        - { 'name':'Phi', 'apiName':'phi'}
+        - { 'name':'Polytimos', 'apiName':'polytimos'}
+        - { 'name':'Quark', 'apiName':'quark', 'adjFactor':-3}
+        - { 'name':'Qubit', 'apiName':'qubit', 'adjFactor':-3}
+        - { 'name':'Sib', 'apiName':'sib'}
+        - { 'name':'Skein', 'apiName':'skein'}
+        - { 'name':'Skunk', 'apiName':'skunk'}
+        - { 'name':'Timetravel', 'apiName':'timetravel'}
+        - { 'name':'Tribus', 'apiName':'tribus'}
+        - { 'name':'X11', 'apiName':'x11', 'adjFactor':-3}
+        - { 'name':'X11evo', 'apiName':'x11evo'}
+        - { 'name':'X13', 'apiName':'x13'}
+        - { 'name':'X14', 'apiName':'x14'}
+        - { 'name':'X17', 'apiName':'x17'}
+        - { 'name':'XEvan', 'apiName':'xevan'}
       - name: 'ahashpool'
         class: 'pool.yiimp'
         apiUrl: 'https://www.ahashpool.com/api/status'
         stratumUrl: '{ALGO}.mine.ahashpool.com:{PORT}'
+        refreshInterval: 60
         statsData: 'estimate_last24h'
+        paymentAddr: 'blah fill me out'
         cryptoPaid: 'BTC'
         algoMap:
-        - ['Bitcore','bitcore']
-        - ['Blake2S','blake2s',-3]
-        - ['Blakecoin', 'blakecoin',-3]
-        - ['C11', 'c11']
-        - ['Equihash','equihash',3]
-        - ['Groestl','groestl']
-        - ['HSR','hsr']
-        - ['Keccak','keccak',-3]
-        - ['LBRY','lbry']
-        - ['Lyra2RE2','lyra2v2']
-        - ['Myriad-Groestl','myr-gr']
-        - ['NeoScrypt','neoscrypt']
-        - ['NIST5','nist5']
-        - ['Phi','phi']
-        - ['Polytimos','polytimos']
-        - ['Quark','quark',-3]
-        - ['Qubit','qubit',-3]
-        - ['Sib','sib']
-        - ['Skein','skein']
-        - ['Skunk','skunk']
-        - ['Timetravel','timetravel']
-        - ['Tribus','tribus']
-        - ['X11','x11',-3]
-        - ['X11evo','x11evo']
+        - { 'name':'Bitcore', 'apiName':'bitcore'}
+        - { 'name':'Blake2S', 'apiName':'blake2s', 'adjFactor':-3}
+        - { 'name':'Blakecoin', 'apiName':'blakecoin', 'adjFactor':-3}
+        - { 'name':'C11', 'apiName':'c11'}
+        - { 'name':'Equihash', 'apiName':'equihash', 'adjFactor':3}
+        - { 'name':'Groestl', 'apiName':'groestl'}
+        - { 'name':'HSR', 'apiName':'hsr'}
+        - { 'name':'Keccak', 'apiName':'keccak', 'adjFactor':-3}
+        - { 'name':'LBRY', 'apiName':'lbry'}
+        - { 'name':'Lyra2RE2', 'apiName':'lyra2v2'}
+        - { 'name':'Myriad-Groestl', 'apiName':'myr-gr'}
+        - { 'name':'NeoScrypt', 'apiName':'neoscrypt'}
+        - { 'name':'NIST5', 'apiName':'nist5'}
+        - { 'name':'Phi', 'apiName':'phi'}
+        - { 'name':'Polytimos', 'apiName':'polytimos'}
+        - { 'name':'Quark', 'apiName':'quark', 'adjFactor':-3}
+        - { 'name':'Qubit', 'apiName':'qubit', 'adjFactor':-3}
+        - { 'name':'Sib', 'apiName':'sib'}
+        - { 'name':'Skein', 'apiName':'skein'}
+        - { 'name':'Skunk', 'apiName':'skunk'}
+        - { 'name':'Timetravel', 'apiName':'timetravel'}
+        - { 'name':'Tribus', 'apiName':'tribus'}
+        - { 'name':'X11', 'apiName':'x11', 'adjFactor':-3}
+        - { 'name':'X11evo', 'apiName':'x11evo'}

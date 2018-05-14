@@ -8,7 +8,8 @@ from time import sleep
 
 class test:
     def run(self):
-        log = logging.getLogger("test-runner")
+        # chris found a program called figlet that makes BIG text and got a LITTLE excited.
+        log = logging.getLogger("pool.test-runner")
         log.warn("==================================================")
         sleep(0.001)
         log.warn("||    ___           _        ______        __   ||")
@@ -29,12 +30,16 @@ class test:
             fac = poolFactory("./config/pools.yaml")
         except:
             log.error("Error loading pool config")
+            raise
         
         pools = fac.getPools()
         for pool in pools:
             poolAlgos = pool.getAlgos()
+            sleep(0.001)
             log.info("Pool '%s' containing %s available algo(s)", pool.PoolName(), len(poolAlgos))
 
+        #Sleep for 1ms so our end banner is displayed correctly in logtrail.
+        sleep(0.001)
         log.warn("=================================================")
         sleep(0.001)
         log.warn("||        ____        __  ______        __     ||")

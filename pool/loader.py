@@ -1,6 +1,7 @@
 import yaml
 import logging
 from pool.yiimp import Yiimp
+from pool.poolBase import PoolCreationError
 
 class poolFactory:
     
@@ -20,8 +21,11 @@ class poolFactory:
             poolName = poolDef["name"]
             self.log.debug("found pool definintion %s for pool %s",poolType, poolName)
             if poolType == "pool.yiimp":                 
-                pools.append(Yiimp(poolDef))
-                self.log.debug("added Yiimp pool %s", poolName)
+                try:
+                    pools.append(Yiimp(poolDef))
+                    self.log.debug("added Yiimp pool %s", poolName)
+                except PoolCreationError:
+                    self.log.exception("Unable to create instance of Yiimp Pool")
         return pools
 
 
